@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+#clock{
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    padding: 1.5em 2.5em;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    font-size: clamp(1.2rem, 5vw, 3rem);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+#clock:hover{
+    transform: scale(1.05);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+    background: rgba(255,255,255,0.18);
+}
+
+#clock span{
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+#clock:hover span{
+    color: #00f2ff;
+    text-shadow: 0 0 12px rgba(0,242,255,0.8);
+}
+
+#day{
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+#AM-PM{
+    font-size: 0.6em;
+    font-weight: 600;
+    padding-left: 0.3em;
+}
+
+@media (max-width: 600px){
+    #clock{
+        padding: 1em 1.4em;
+        border-radius: 15px;
+    }
+}
