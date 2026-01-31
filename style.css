@@ -8,12 +8,14 @@
 body{
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 1.2rem;
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 }
 
-#clock{
+.clock{
     display: flex;
     align-items: center;
     gap: 0.6em;
@@ -27,17 +29,17 @@ body{
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
-#clock:hover{
+.clock:hover{
     transform: scale(1.05);
     box-shadow: 0 30px 60px rgba(0,0,0,0.45);
     background: rgba(255,255,255,0.18);
 }
 
-#clock span{
+.clock span{
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-#clock:hover span{
+.clock:hover span{
     color: #00f2ff;
     text-shadow: 0 0 12px rgba(0,242,255,0.8);
 }
@@ -54,8 +56,12 @@ body{
 }
 
 @media (max-width: 600px){
-    #clock{
+    .clock{
         padding: 1em 1.4em;
         border-radius: 15px;
     }
+}
+.date-clock{
+    padding: 0.8em 1.6em;
+    font-size: clamp(1rem, 4vw, 2rem);
 }
