@@ -4,12 +4,17 @@ function getCurrentTime(){
     var secSpan = document.getElementById('sec');
     var AmPmSpan = document.getElementById('AM-PM');
     var daySpan = document.getElementById('day')
+    var dateSpan = document.getElementById('date')
+    var monSpan = document.getElementById('month')
+    var yearSpan = document.getElementById('year')
     var currentTime = new Date();
     var minutes = currentTime.getMinutes()
     var seconds = currentTime.getSeconds()
     var hours = currentTime.getHours()
     var days = currentTime.getDay()
-
+    var Numdate = currentTime.getDate()
+    var mon = currentTime.getMonth()
+    var year = currentTime.getFullYear()
     if(minutes < 10){
         minSpan.innerText = '0' + minutes;
     } else{
@@ -52,6 +57,10 @@ function getCurrentTime(){
 
     var daysArray = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
     daySpan.innerText = daysArray[days]
+    var monArray = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+    monSpan.innerText = monArray[mon]
+    dateSpan.innerText = Numdate
+    yearSpan.innerText = year
 }
 
 setInterval(getCurrentTime, 1000)
